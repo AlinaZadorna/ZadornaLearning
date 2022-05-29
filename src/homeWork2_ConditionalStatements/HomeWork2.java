@@ -269,10 +269,8 @@ x has the greatest value”. Где “x” одно из чисел*/
         int bonus = 250;
         if (numberOfSales > 10) {
             salary += bonus;
-            System.out.println("The salary of employee is " + salary);
-        } else {
-            System.out.println("The salary of employee is " + salary);
         }
+        System.out.println("The salary of employee is " + salary);
     }
 
     // for task #8
