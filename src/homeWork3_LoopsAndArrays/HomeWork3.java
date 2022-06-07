@@ -1,5 +1,6 @@
 package homeWork3_LoopsAndArrays;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -48,11 +49,15 @@ public class HomeWork3 {
 //2. Написать программу, которая печатает значения sin(x), где x это каждые 10 градусов от 0 до 360.
 
     public static void findSinus() {
-        double[] arrayDegrees = new double[36];
-        for (int i = 0; i < arrayDegrees.length; i++) {
-            arrayDegrees[i] = (i + 1) * 10;
-            double sin = Math.sin(Math.toRadians(arrayDegrees[i]));
-            System.out.println("Sinus of " + arrayDegrees[i] + " is " + sin);
+//        double[] arrayDegrees = new double[36];
+//        for (int i = 0; i < arrayDegrees.length; i++) {
+//            arrayDegrees[i] = (i + 1) * 10;
+//            double sin = Math.sin(Math.toRadians(arrayDegrees[i]));
+//            System.out.println("Sinus of " + arrayDegrees[i] + " is " + sin);
+
+        for (int i = 0; i <= 360; i += 10) {
+            double sin = Math.sin(Math.toRadians(i));
+            System.out.println("Sinus of " + i + " is " + sin);
         }
     }
 
@@ -121,13 +126,24 @@ public class HomeWork3 {
 //7. Написать программу, который переворачивает массив
 
     public static void reverseArray() {
-        String stringOfLetters = "a, b , c, d, e, f, g";
-        char[] arrayOfletters = stringOfLetters.toCharArray();
-        System.out.println("This is the reversed array: ");
+        String stringOfLetters = "a, b, c, d, e, f, g";
+        String stringNoSpaces = stringOfLetters.replaceAll(", ", "");
+        char[] arrayOfletters = stringNoSpaces.toCharArray();
+
+        //Method #1:
+        System.out.println("This is the reversed array Method #1: ");
         for (int e = arrayOfletters.length - 1; e >= 0; e--) {
             System.out.print(arrayOfletters[e]);
         }
         System.out.println();
+
+        //Method #2:
+        for (int i = 0; i < arrayOfletters.length / 2; i++) {
+            char foundLetter = arrayOfletters[i];
+            arrayOfletters[i] = arrayOfletters[arrayOfletters.length - i - 1];
+            arrayOfletters[arrayOfletters.length - i - 1] = foundLetter;
+        }
+        System.out.println("This is reversed array Method #2: " + Arrays.toString(arrayOfletters));
     }
 
 //Игра “Кости”
@@ -157,7 +173,7 @@ public class HomeWork3 {
                 System.out.println("Your position is: " + currentPosition + ". Congratulations! You won.");
                 break;
             } else if (currentPosition < 20 && i < steps.length - 1) {
-                System.out.println("Dice result is: " + die + ". You current position is: " + currentPosition +
+                System.out.println("Dice result is: " + die + ". Your current position is: " + currentPosition +
                         ". You should pass " + stepsLeft + " more steps to win");
             } else {
                 System.out.println("Dice result is: " + die + ". You lost.");

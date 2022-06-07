@@ -100,7 +100,7 @@ public class HW2_AdvancedTasks {
         System.out.println("Enter the Third number:");
         int num3 = scanner.nextInt();
 
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         if (num1 >= num2 && num1 >= num3) {
             max = num1;
         }
@@ -111,7 +111,7 @@ public class HW2_AdvancedTasks {
             max = num3;
         }
         System.out.println("The largest number is: " + max);
-        int min = Integer.MIN_VALUE;
+        int min = 0;
         if (num1 <= num2 && num1 <= num3) {
             min = num1;
         }
@@ -122,7 +122,7 @@ public class HW2_AdvancedTasks {
             min = num3;
         }
         System.out.println("The smallest number is: " + min);
-        int average = Integer.MIN_VALUE;
+        int average = 0;
         if (num1 != max && num1 != min) {
             average = num1;
         }
