@@ -21,9 +21,8 @@ public class HomeWork4 {
         int workExperience = 3;
         int numberOfSales = 8;
         double sumOfSales = 16000;
-        double finalSalaryTest = baseHoursSalary * coef(workExperience) + salary(hours, rate) - baseHoursSalary
-                + salesBonus(numberOfSales) + sumBonus(sumOfSales);
-        System.out.println("The salary of agent is: " + finalSalaryTest);
+
+        countSalary(hours, rate, baseHoursSalary, workExperience, numberOfSales, sumOfSales);
 
         //For task C
 
@@ -33,9 +32,8 @@ public class HomeWork4 {
         double foreignCallZoneOne = 28;
         double foreignCallZoneTwo = 30;
         double tax = 1.07;
-        double tariffFinalCost = (internetCost(spendGB) + callCost(minutes) + smsCost(sms)
-                + foreignCallCost_ZoneOne(foreignCallZoneOne) + foreignCallCost_ZoneTwo(foreignCallZoneTwo)) * tax;
-        System.out.println("Monthly fee is: " + tariffFinalCost + " uah");
+
+        countTariffFinalCost(spendGB, minutes, sms, foreignCallZoneOne, foreignCallZoneTwo, tax);
     }
 
 //    A - Написать метод (void) который переворачивает массив.
@@ -116,6 +114,13 @@ public class HomeWork4 {
 //В методе main проинициализировать все нужные переменные, вызвать методы
 //    и сделать расчет. Результат вывести в консоль
 
+    public static void countSalary(int hours, double rate, double baseHoursSalary, int workExperience,
+                                   int numberOfSales, double sumOfSales) {
+        double finalSalaryTest = baseHoursSalary * coef(workExperience) + salary(hours, rate) - baseHoursSalary
+                + salesBonus(numberOfSales) + sumBonus(sumOfSales);
+        System.out.println("The salary of agent is: " + finalSalaryTest);
+    }
+
 //    C - Счет за телефон
 
 //    Рассчитать стоимость пакета в месяц. Расчёт по каждому из параметров
@@ -173,5 +178,12 @@ public class HomeWork4 {
     }
 
 //    После подсчёта суммы добавляется налог 7 %
+
+    public static void countTariffFinalCost(double spendGB, double minutes, double sms, double foreignCallZoneOne,
+                                            double foreignCallZoneTwo, double tax) {
+        double tariffFinalCost = (internetCost(spendGB) + callCost(minutes) + smsCost(sms)
+                + foreignCallCost_ZoneOne(foreignCallZoneOne) + foreignCallCost_ZoneTwo(foreignCallZoneTwo)) * tax;
+        System.out.println("Monthly fee is: " + tariffFinalCost + " uah");
+    }
 }
 
