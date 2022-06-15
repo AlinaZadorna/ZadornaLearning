@@ -18,7 +18,7 @@ public class BillCalculation {
         this.foreignMinutesZoneTwo = foreignMinutesZoneTwo;
     }
 
-    public static double internetCost(double spendGB) {
+    private double internetCost(double spendGB) {
         double tariffCost = 200;
         double extraPrice;
         if (spendGB > 8) {
@@ -36,7 +36,7 @@ public class BillCalculation {
     }
 //2. Звонки по Украине до 500 минут 0,5 грн / мин после 0,75
 
-    public static double callCost(double minutes) {
+    private double callCost(double minutes) {
         double priceForCalls = minutes * 0.5;
         if (minutes >= 500) {
             priceForCalls = 500 * 0.5 + (minutes - 500) * 0.75;
@@ -46,7 +46,7 @@ public class BillCalculation {
 
     //3. Смс до 50 шт 1 грн после 1,50
 
-    public static double smsCost(double sms) {
+    private double smsCost(double sms) {
         double priceForSms = sms * 1;
         if (sms >= 50) {
             priceForSms = 50 + (sms - 50) * 1.5;
@@ -56,13 +56,13 @@ public class BillCalculation {
 
 //4. Звонки за рубеж зона 1 1.5 грн/мин
 
-    public static double foreignCallCost_ZoneOne(double minutes) {
+    private double foreignCallCost_ZoneOne(double minutes) {
         return minutes * 1.5;
     }
 
 //5. Звонки за рубеж зона 2 2 грн/мин
 
-    public static double foreignCallCost_ZoneTwo(double minutes) {
+    private double foreignCallCost_ZoneTwo(double minutes) {
         return minutes * 2;
     }
 
