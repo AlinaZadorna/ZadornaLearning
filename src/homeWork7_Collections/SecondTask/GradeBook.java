@@ -15,10 +15,10 @@ public class GradeBook {
 
         HashMap<String, Integer> gradeBookMap = new HashMap<>();
 
-        for (String i : namesOfStudents) {
-            if (firstTest.get(i) > secondTest.get(i)) {
-                gradeBookMap.put(i, firstTest.get(i));
-            } else gradeBookMap.put(i, secondTest.get(i));
+        for (String name : namesOfStudents) {
+            if (firstTest.get(name) > secondTest.get(name)) {
+                gradeBookMap.put(name, firstTest.get(name));
+            } else gradeBookMap.put(name, secondTest.get(name));
         }
 
         System.out.println("The final results are: ");

@@ -22,29 +22,29 @@ public class BookTester {
         List<Book> booksWithSoftCover = new ArrayList<>();
         List<Book> booksWithHardCover = new ArrayList<>();
 
-        for (Book i : bookCollection) {
-            if (i.getCoverType().equals("soft")) {
-                booksWithSoftCover.add(i);
-            } else booksWithHardCover.add(i);
+        for (Book book : bookCollection) {
+            if (book.getCoverType().equals("soft")) {
+                booksWithSoftCover.add(book);
+            } else booksWithHardCover.add(book);
         }
         System.out.println("In the book shop we have the following books: ");
 
 
-        for (Book i : bookCollection) {
-            System.out.println(i.getTitle());
+        for (Book book : bookCollection) {
+            System.out.println(book.getTitle());
         }
 
         System.out.println("The books with soft cover are: ");
 
 
-        for (Book i : booksWithSoftCover) {
-            System.out.println(i.getTitle());
+        for (Book book : booksWithSoftCover) {
+            System.out.println(book.getTitle());
         }
 
         System.out.println("The books with hard cover are: ");
 
-        for (Book i : booksWithHardCover) {
-            System.out.println(i.getTitle());
+        for (Book book : booksWithHardCover) {
+            System.out.println(book.getTitle());
         }
     }
 }
