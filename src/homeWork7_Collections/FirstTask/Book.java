@@ -50,8 +50,8 @@ public class Book {
         return quantityOfPages;
     }
 
-    public String toString(){
-        return "This book title is: " +this.title + ", price: " + this.price
+    public String toString() {
+        return "This book title is: " + this.title + ", price: " + this.price
                 + ", cover type: " + this.coverType + ", quantity of pages; "
                 + this.quantityOfPages + ".";
     }
