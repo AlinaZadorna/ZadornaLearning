@@ -1,7 +1,5 @@
 package homeWork9_StringsAndEnums;
 
-import java.util.Objects;
-
 public class Main {
     public static void main(String[] args) {
 
